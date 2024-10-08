@@ -1,0 +1,16 @@
+stages:
+  - test
+  - deploy
+
+test-job:
+  stage: test
+  image: python:3.8
+  before_script:
+    - pip install -r requirements.txt
+  script:
+    - python -m unittest discover
+
+deploy-job:
+  stage: deploy
+  script:
+    - ./deploy.sh
