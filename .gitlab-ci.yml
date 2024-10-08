@@ -1,5 +1,5 @@
 stages:
-  - test
+  - deploy
 
 test-job:
   stage: test
@@ -9,5 +9,8 @@ test-job:
   script:
     - python -m unittest discover
 
-
+deploy-job:
+  stage: deploy
+  script:
+    - ./deploy.sh
 
